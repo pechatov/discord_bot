@@ -1,0 +1,8 @@
+weak_auras = {'raid auras': 'https://wago.io/g0zAi7Ivc',
+              'дебафы в видениях': 'https://wago.io/14Sz-T-dm',
+              'дебафы кораптов': 'https://wago.io/Corruptforged',
+              'здравомыслие с таймером': 'https://wago.io/QqZFpQSZ4',
+              '!keys': 'https://wago.io/bfakeys',
+              'сезонный афикс': 'https://wago.io/Q_7uyRPYP',
+              'отсчет до страха': 'https://wago.io/hRSNyZWv4',
+              }
