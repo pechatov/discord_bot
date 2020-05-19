@@ -12,7 +12,6 @@ import pickle
 from classes import classes, specs, class_dict, class_color
 from character import Character
 from dungeons import dungeons, dungeons_dict, dungeons_str_1, dungeons_str_2
-from wa import weak_auras
 import time
 
 
@@ -183,10 +182,12 @@ async def wa(ctx, action=None, name=None, url=None):
 
 
 @bot.command(name='wa_add')
-@commands.has_role('admin')
-async def wa_add(ctx, name, url):
+# @commands.has_role('stars')
+async def wa_add(ctx, *args):
     with open('weak_auras.json', 'r') as fp:
         weak_auras = json.load(fp)
+    name = ' '.join(args[:-1])
+    url = args[-1]
     weak_auras[name] = url
     with open('weak_auras.json', 'w') as fp:
         json.dump(weak_auras, fp)
@@ -194,10 +195,11 @@ async def wa_add(ctx, name, url):
 
 
 @bot.command(name='wa_delete')
-@commands.has_role('admin')
-async def wa_delete(ctx, name):
+# @commands.has_role('admin')
+async def wa_delete(ctx, *args):
     with open('weak_auras.json', 'r') as fp:
         weak_auras = json.load(fp)
+    name = ' '.join(args)
     if name in weak_auras.keys():
         weak_auras.pop(name)
         with open('weak_auras.json', 'w') as fp:
